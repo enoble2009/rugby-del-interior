@@ -1,0 +1,56 @@
+.right-search { 
+	float: right;
+	mat-form-field.mat-form-field {
+	  font-size: 10px;
+	  margin-right: 10px;
+	}
+}
+
+.dashboard-header {
+  padding: 5px;
+  background: lightgrey;
+  border-bottom: 1px solid #444;
+  button[color="red"] {
+    background: #D30000;
+  }
+  button {
+    background: #047dac;
+    color: white;
+    margin-right: 10px;
+  }
+}
+
+.players-table {
+	padding: 2rem;
+	table {
+	  width: 100%;
+	  .mat-column-photo {
+	  	width: 100px;
+	  	img {
+	  		max-width: 90%;
+	  	}
+	  }
+	  .mat-column-actions {
+	  	width: 135px;
+	  	button {
+		  	margin-right: 5px;
+	  	}
+	  	button[color="black"] {
+	  		background: black;
+	  		color: white;
+	  	}
+	  	button[color="red"] {
+		    background: #D30000;
+	  		color: white;
+	  	}
+	  	button[color="blue"] {
+		    background: #047dac;
+	  		color: white;
+	  	}
+	  }
+	  img {
+	  	max-height: 3rem;
+	  	margin: 0.2rem;
+	  }
+	}	
+}

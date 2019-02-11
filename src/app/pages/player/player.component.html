@@ -1,0 +1,84 @@
+<div class="dashboard-header">
+	<button mat-raised-button color="primary" (click)="createPlayer();">Crear perfil</button>
+	<button mat-raised-button color="primary" (click)="createPlayer();">Editar perfil propio</button>
+	<button mat-raised-button color="primary" (click)="back();">Volver a Principal</button>
+	<button mat-raised-button color="red" (click)="closeSession();">Cerrar sesión</button>
+	<div class="right-search">
+		<mat-form-field>
+			<mat-label>Nombre o cédula</mat-label>
+	  	<input matInput dividerColor="accent" name="nameorid" required>
+		</mat-form-field>
+		<button mat-raised-button color="primary" (click)="toPlayers();">Buscar...</button>
+	</div>
+</div>
+
+<div class="players-table">
+	<h1>Jugadores</h1>
+
+	<div class="quick-filters">
+		<h2>Filtros Rápidos</h2>
+		<mat-form-field style="margin-left: 5px; margin-bottom: 5px;">
+		  <mat-select placeholder="Equipo" multiple>
+		    <mat-option *ngFor="let team of teamsList" [value]="team">{{team.name}}</mat-option>
+		  </mat-select>
+		</mat-form-field>
+		<mat-button-toggle-group name="fontStyle" aria-label="Font Style" style="margin-left: 5px; margin-bottom: 5px;">
+		  <mat-button-toggle value="all">Todos</mat-button-toggle>
+		  <mat-button-toggle value="withImage">Con foto</mat-button-toggle>
+		  <mat-button-toggle value="withoutImage">Sin foto</mat-button-toggle>
+		</mat-button-toggle-group>
+		<mat-button-toggle-group name="fontStyle" aria-label="Font Style" style="margin-left: 5px; margin-bottom: 5px;">
+		  <mat-button-toggle value="all">Todos</mat-button-toggle>
+		  <mat-button-toggle value="payed">Pagado URU</mat-button-toggle>
+		  <mat-button-toggle value="unpayed">No pagado URU</mat-button-toggle>
+		</mat-button-toggle-group>
+		<mat-button-toggle-group name="fontStyle" aria-label="Font Style" style="margin-left: 5px; margin-bottom: 5px;">
+		  <mat-button-toggle value="all">Todos</mat-button-toggle>
+		  <mat-button-toggle value="withImage">RugbyReady OK</mat-button-toggle>
+		  <mat-button-toggle value="withoutImage">RugbyReady NO</mat-button-toggle>
+		</mat-button-toggle-group>
+	</div>
+
+	<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+	  <!--- Note that these columns can be defined in any order.
+	        The actual rendered columns are set as a property on the row definition" -->
+
+	  <!-- Position Column -->
+	  <ng-container matColumnDef="id">
+	    <th mat-header-cell *matHeaderCellDef> Identificación </th>
+	    <td mat-cell *matCellDef="let element"> {{element.id | identification}} </td>
+	  </ng-container>
+
+	  <!-- Name Column -->
+	  <ng-container matColumnDef="photo">
+	    <th mat-header-cell *matHeaderCellDef> Foto </th>
+	    <td mat-cell *matCellDef="let element"> <img src="{{element.photo}}"/> </td>
+	  </ng-container>
+
+	  <!-- Name Column -->
+	  <ng-container matColumnDef="name">
+	    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+	    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+	  </ng-container>
+
+	  <!-- Weight Column -->
+	  <ng-container matColumnDef="team">
+	    <th mat-header-cell *matHeaderCellDef> Equipo </th>
+	    <td mat-cell *matCellDef="let element"> <img src="{{element.team}}" title="{{element.teamName}}"/> </td>
+	  </ng-container>
+
+	  <!-- Weight Column -->
+	  <ng-container matColumnDef="actions">
+	    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+	    <td mat-cell *matCellDef="let element">
+			  <button mat-mini-fab color="blue" (click)="toDashboard();" title="Información"><mat-icon>info_outline</mat-icon></button>
+			  <button mat-mini-fab color="red" (click)="toDashboard();" title="Editar"><mat-icon>edit</mat-icon></button>
+			  <button mat-mini-fab color="black" (click)="toDashboard();" title="Eliminar"><mat-icon>delete</mat-icon></button>
+	    </td>
+	  </ng-container>
+
+	  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+	  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+	</table>
+</div>

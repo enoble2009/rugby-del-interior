@@ -1,0 +1,47 @@
+.footer {
+  padding-top: 3rem;
+  padding-bottom: 0.5rem;
+  background-color: #2e2e2e;
+  .container {
+  	.footer-lower {
+	    margin-left: 50px;
+	    margin-right: 50px;
+	    color: white;
+	    text-align: right;
+  		hr {
+		    margin: 1rem 0;
+    		border-color: #fff;
+    		opacity: .05;
+  		}
+  	}
+  	mat-grid-list {
+  		margin-left: 50px;
+  		margin-right: 50px;
+  		.media-wrap {
+  			text-align: center;
+  			.percentage-fifty {
+  				text-align: center;
+  				width: 50%;
+  			}
+  		}
+  		mat-grid-tile {
+  			>::ng-deep .mat-figure {
+	  			align-items: baseline;
+  			}
+				.vertical-align {
+			    display: flex;
+	    		flex-direction: column;
+	  			h5 {
+	  				padding-bottom: 1rem!important;
+	  				font-size: 1.25rem;
+	  				font-weight: 500;
+	  				margin: 0;
+	  			}
+	  			p {
+	  				margin: 0;
+	  			}
+				}
+  		}
+  	}
+  }
+}

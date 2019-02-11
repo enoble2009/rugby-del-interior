@@ -1,0 +1,13 @@
+<form class="login-container">
+	<mat-form-field>
+		<mat-label>Cédula (ej.: 49731406)</mat-label>
+  	<input matInput placeholder="Cédula (ej.: 49731406)" dividerColor="accent" name="id" required>
+	</mat-form-field>
+
+	<mat-form-field>
+		<mat-label>Contraseña</mat-label>
+  	<input matInput placeholder="Contraseña" type="password" name="password" required>
+	</mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="toDashboard();" mat-dialog-close>Iniciar sesión</button>
+</form>

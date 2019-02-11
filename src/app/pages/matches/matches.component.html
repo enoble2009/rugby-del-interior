@@ -1,0 +1,76 @@
+<div class="dashboard-header">
+	<button mat-raised-button color="primary" (click)="createTable();">Crear Tabla</button>
+	<button mat-raised-button color="primary" (click)="back();">Volver a Principal</button>
+	<button mat-raised-button color="red" (click)="closeSession();">Cerrar sesión</button>
+</div>
+
+<div class="matches-table">
+	<h1>Partidos por tabla</h1>
+
+	<div class="quick-filters">
+		<h2>Filtros Rápidos</h2>
+		<mat-form-field style="margin-left: 5px; margin-bottom: 5px;">
+		  <mat-select placeholder="Tabla">
+		    <mat-option *ngFor="let table of tablesList" [value]="table">{{table.name}}</mat-option>
+		  </mat-select>
+		</mat-form-field>
+	</div>
+
+	<mat-card>
+		<mat-card-header>
+	    <div mat-card-avatar><mat-icon>date_range</mat-icon></div>
+	    <mat-card-title>Copa Interior 2019</mat-card-title>
+  		<button mat-raised-button class="float-right" color="blue" (click)="createMatch();">Ingresar Partido</button>
+	  </mat-card-header>
+	  <mat-card-content>
+			<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+			  <!--- Note that these columns can be defined in any order.
+			        The actual rendered columns are set as a property on the row definition" -->
+
+			  <!-- Position Column -->
+			  <ng-container matColumnDef="date">
+			    <th mat-header-cell *matHeaderCellDef> Fecha </th>
+			    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+			  </ng-container>
+
+			  <!-- Name Column -->
+			  <ng-container matColumnDef="hour">
+			    <th mat-header-cell *matHeaderCellDef> Hora </th>
+			    <td mat-cell *matCellDef="let element"> {{element.hour}} </td>
+			  </ng-container>
+
+			  <!-- Name Column -->
+			  <ng-container matColumnDef="place">
+			    <th mat-header-cell *matHeaderCellDef> Lugar </th>
+			    <td mat-cell *matCellDef="let element"> {{element.place}} </td>
+			  </ng-container>
+
+			  <!-- Weight Column -->
+			  <ng-container matColumnDef="teams">
+			    <th mat-header-cell *matHeaderCellDef> Equipos </th>
+			    <td mat-cell *matCellDef="let element"> <span class="green">{{element.team1}}</span> - <span class="red">{{element.team2}}</span> </td>
+			  </ng-container>
+
+			  <!-- Weight Column -->
+			  <ng-container matColumnDef="results">
+			    <th mat-header-cell *matHeaderCellDef> Resultados </th>
+			    <td mat-cell *matCellDef="let element"> <span class="green">{{element.result1}}</span> - <span class="red">{{element.result2}}</span> </td>
+			  </ng-container>
+
+			  <!-- Weight Column -->
+			  <ng-container matColumnDef="actions">
+			    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+			    <td mat-cell *matCellDef="let element">
+					  <button mat-mini-fab color="red" (click)="toDashboard();" title="Editar"><mat-icon>edit</mat-icon></button>
+					  <button mat-mini-fab color="black" (click)="toDashboard();" title="Eliminar"><mat-icon>delete</mat-icon></button>
+			    </td>
+			  </ng-container>
+
+			  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+			</table>
+
+	  </mat-card-content>
+	</mat-card>
+</div>

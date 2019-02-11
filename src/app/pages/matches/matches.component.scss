@@ -1,0 +1,71 @@
+
+.dashboard-header {
+  padding: 5px;
+  background: lightgrey;
+  border-bottom: 1px solid #444;
+  button[color="red"] {
+    background: #D30000;
+  }
+  button {
+    background: #047dac;
+    color: white;
+    margin-right: 10px;
+  }
+}
+
+.matches-table {
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 20px;
+}
+
+.matches-table {
+	padding: 2rem;
+	button.float-right {
+		float: right;
+    right: 17px;
+    position: absolute;
+    top: 10px;
+	}
+	button[color="blue"] {
+    background: #047dac;
+		color: white;
+	}
+	table {
+	  width: 100%;
+	  span.green {
+	  	color: green;
+	  }
+	  span.red {
+	  	color: red;
+	  }
+	  .mat-column-photo {
+	  	width: 100px;
+	  	img {
+	  		max-width: 90%;
+	  	}
+	  }
+	  .mat-column-actions {
+	  	width: 135px;
+	  	button {
+		  	margin-right: 5px;
+	  	}
+	  	button[color="black"] {
+	  		background: black;
+	  		color: white;
+	  	}
+	  	button[color="red"] {
+		    background: #D30000;
+	  		color: white;
+	  	}
+	  	button[color="blue"] {
+		    background: #047dac;
+	  		color: white;
+	  	}
+	  }
+	  img {
+	  	max-height: 3rem;
+	  	margin: 0.2rem;
+	  }
+	}	
+}

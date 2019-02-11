@@ -1,0 +1,14 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  button {
+		background: #149dcc;
+  }
+  .mat-form-field-wrapper {
+  	padding-bottom: 0;
+  }
+}
+
+.login-container > * {
+  width: 100%;
+}
