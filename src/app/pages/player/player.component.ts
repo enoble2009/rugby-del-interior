@@ -47,4 +47,8 @@ export class PlayerComponent implements OnInit {
   	this.router.navigate(['/dashboard']);
   }
 
+  createPlayer() { }
+
+  toPlayers() { }
+
 }

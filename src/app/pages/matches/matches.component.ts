@@ -47,4 +47,8 @@ export class MatchesComponent implements OnInit {
   	this.router.navigate(['/dashboard']);
   }
 
+  createTable() { }
+
+  createMatch() { }
+
 }
