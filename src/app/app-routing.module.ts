@@ -6,6 +6,7 @@ import { PlayerComponent } from './pages/player/player.component';
 import { MatchesComponent } from './pages/matches/matches.component';
 
 const routes: Routes = [
+	{ path: '', component: HomeComponent },
 	{ path: 'home', component: HomeComponent },
 	{ path: 'dashboard', component: DashboardComponent },
 	{ path: 'player', component: PlayerComponent },
